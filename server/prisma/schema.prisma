@@ -1,0 +1,342 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  HR
+  EMPLOYEE
+}
+
+enum EmploymentStatus {
+  ACTIVE
+  INACTIVE
+  TERMINATED
+  ON_LEAVE
+  PROBATION
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  LATE
+  HALF_DAY
+  ON_LEAVE
+  HOLIDAY
+  WEEKEND
+}
+
+enum LeaveType {
+  SICK
+  CASUAL
+  PAID
+  WORK_FROM_HOME
+  MATERNITY
+  PATERNITY
+  UNPAID
+}
+
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum PayrollStatus {
+  DRAFT
+  PROCESSING
+  PAID
+  FAILED
+}
+
+enum NotificationType {
+  LEAVE_APPLIED
+  LEAVE_APPROVED
+  LEAVE_REJECTED
+  PAYROLL_GENERATED
+  ATTENDANCE_REMINDER
+  ANNOUNCEMENT
+  PERFORMANCE_REVIEW
+  GENERAL
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+model User {
+  id                  String    @id @default(uuid())
+  email               String    @unique
+  password            String
+  role                Role      @default(EMPLOYEE)
+  isEmailVerified     Boolean   @default(false)
+  emailVerifyToken    String?
+  passwordResetToken  String?
+  passwordResetExpiry DateTime?
+  refreshTokens       RefreshToken[]
+  employee            Employee?
+  notifications       Notification[]
+  activityLogs        ActivityLog[]
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  deletedAt           DateTime?
+
+  @@index([email])
+  @@index([role])
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @db.VarChar(500)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([token(length: 255)])
+}
+
+model Department {
+  id          String     @id @default(uuid())
+  name        String     @unique
+  description String?    @db.Text
+  headId      String?
+  head        Employee?  @relation("DepartmentHead", fields: [headId], references: [id])
+  employees   Employee[] @relation("EmployeeDepartment")
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  deletedAt   DateTime?
+
+  @@index([name])
+}
+
+model Employee {
+  id               String           @id @default(uuid())
+  employeeId       String           @unique
+  userId           String           @unique
+  user             User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  firstName        String
+  lastName         String
+  phone            String?
+  gender           Gender?
+  dateOfBirth      DateTime?
+  address          String?          @db.Text
+  city             String?
+  state            String?
+  country          String?
+  profilePhoto     String?
+  departmentId     String?
+  department       Department?      @relation("EmployeeDepartment", fields: [departmentId], references: [id])
+  designation      String?
+  joiningDate      DateTime         @default(now())
+  salary           Decimal          @default(0) @db.Decimal(10, 2)
+  status           EmploymentStatus @default(ACTIVE)
+  emergencyName    String?
+  emergencyPhone   String?
+  emergencyRelation String?
+  managerId        String?
+  manager          Employee?        @relation("ManagerEmployee", fields: [managerId], references: [id])
+  subordinates     Employee[]       @relation("ManagerEmployee")
+  headOfDepartment Department[]     @relation("DepartmentHead")
+  attendances      Attendance[]
+  leaveRequests    LeaveRequest[]
+  leaveBalances    LeaveBalance[]
+  payrolls         Payroll[]
+  performanceReviews PerformanceReview[] @relation("RevieweeEmployee")
+  reviewsGiven     PerformanceReview[]   @relation("ReviewerEmployee")
+  documents        Document[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  deletedAt        DateTime?
+
+  @@index([employeeId])
+  @@index([departmentId])
+  @@index([status])
+  @@index([userId])
+}
+
+model Attendance {
+  id           String           @id @default(uuid())
+  employeeId   String
+  employee     Employee         @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  date         DateTime         @db.Date
+  clockIn      DateTime?
+  clockOut     DateTime?
+  breakStart   DateTime?
+  breakEnd     DateTime?
+  workingHours Decimal?         @db.Decimal(4, 2)
+  breakHours   Decimal?         @db.Decimal(4, 2)
+  status       AttendanceStatus @default(PRESENT)
+  isLate       Boolean          @default(false)
+  overtime     Decimal?         @db.Decimal(4, 2)
+  notes        String?          @db.Text
+  editedBy     String?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@unique([employeeId, date])
+  @@index([employeeId])
+  @@index([date])
+  @@index([status])
+}
+
+model LeaveBalance {
+  id           String    @id @default(uuid())
+  employeeId   String
+  employee     Employee  @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  leaveType    LeaveType
+  year         Int
+  total        Int       @default(0)
+  used         Int       @default(0)
+  remaining    Int       @default(0)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@unique([employeeId, leaveType, year])
+  @@index([employeeId])
+}
+
+model LeaveRequest {
+  id           String      @id @default(uuid())
+  employeeId   String
+  employee     Employee    @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  leaveType    LeaveType
+  startDate    DateTime    @db.Date
+  endDate      DateTime    @db.Date
+  days         Int
+  reason       String      @db.Text
+  status       LeaveStatus @default(PENDING)
+  approvedById String?
+  approvedAt   DateTime?
+  rejectedReason String?   @db.Text
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([employeeId])
+  @@index([status])
+  @@index([startDate])
+}
+
+model Payroll {
+  id             String        @id @default(uuid())
+  employeeId     String
+  employee       Employee      @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  month          Int
+  year           Int
+  basicSalary    Decimal       @db.Decimal(10, 2)
+  bonus          Decimal       @default(0) @db.Decimal(10, 2)
+  allowances     Decimal       @default(0) @db.Decimal(10, 2)
+  deductions     Decimal       @default(0) @db.Decimal(10, 2)
+  tax            Decimal       @default(0) @db.Decimal(10, 2)
+  netSalary      Decimal       @db.Decimal(10, 2)
+  workingDays    Int
+  presentDays    Int
+  overtimeHours  Decimal       @default(0) @db.Decimal(4, 2)
+  overtimePay    Decimal       @default(0) @db.Decimal(10, 2)
+  status         PayrollStatus @default(DRAFT)
+  paidAt         DateTime?
+  payslipUrl     String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@unique([employeeId, month, year])
+  @@index([employeeId])
+  @@index([status])
+}
+
+model PerformanceReview {
+  id            String    @id @default(uuid())
+  employeeId    String
+  employee      Employee  @relation("RevieweeEmployee", fields: [employeeId], references: [id], onDelete: Cascade)
+  reviewerId    String
+  reviewer      Employee  @relation("ReviewerEmployee", fields: [reviewerId], references: [id])
+  period        String
+  year          Int
+  goals         Json?
+  rating        Decimal   @db.Decimal(3, 1)
+  feedback      String    @db.Text
+  strengths     String?   @db.Text
+  improvements  String?   @db.Text
+  promotionRecommended Boolean @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([employeeId])
+  @@index([reviewerId])
+}
+
+model Announcement {
+  id          String    @id @default(uuid())
+  title       String
+  content     String    @db.Text
+  isPinned    Boolean   @default(false)
+  createdById String
+  targetRoles Json?
+  readBy      Json?     @default("[]")
+  expiresAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  @@index([isPinned])
+  @@index([createdAt])
+}
+
+model Notification {
+  id         String           @id @default(uuid())
+  userId     String
+  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type       NotificationType
+  title      String
+  message    String           @db.Text
+  data       Json?
+  isRead     Boolean          @default(false)
+  createdAt  DateTime         @default(now())
+
+  @@index([userId])
+  @@index([isRead])
+  @@index([createdAt])
+}
+
+model Document {
+  id           String    @id @default(uuid())
+  employeeId   String
+  employee     Employee  @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  name         String
+  type         String
+  url          String
+  publicId     String
+  size         Int?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+
+  @@index([employeeId])
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String
+  entity    String?
+  entityId  String?
+  details   Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+}

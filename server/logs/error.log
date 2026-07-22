@@ -1,0 +1,465 @@
+2026-07-22 10:42:52 [[31merror[39m]: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation in
+C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\auth\auth.repository.ts:68:32
+
+  65 },
+  66 
+  67 saveRefreshToken: async (userId: string, token: string, expiresAt: Date) => {
+→ 68   return prisma.refreshToken.create(
+The provided value for the column is too long for the column's type. Column: token
+    at $n.handleRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Object.login (C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\auth\auth.service.ts:24:5)
+    at login (C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\auth\auth.controller.ts:21:51)
+2026-07-22 10:49:51 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc6162csm4704028eec.7 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:17 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13014d27sm2556327c88.4 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:19 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13003f12sm3635755c88.2 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:20 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc1a689sm5000140eec.4 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:22 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130f55c6sm4007564c88.15 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:24 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d1300401fsm3315163c88.3 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:25 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc9d932sm4630796eec.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:27 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147e0818e4sm5003899eec.22 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:29 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147e1c7ff4sm4967243eec.27 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:30 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147e07000fsm8287354eec.21 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:32 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130a8421sm2276854c88.10 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:34 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13003f12sm3640407c88.2 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:36 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130cc5ebsm2908333c88.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:37 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13015052sm2307639c88.5 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:39 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc1a6adsm4731055eec.6 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:41 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147df06864sm4828830eec.15 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:42 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147df09a9dsm4696468eec.19 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:44 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc7d8fbsm5248437eec.10 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:46 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147e088d3fsm4650887eec.25 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:47 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147e081985sm4814574eec.23 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:49 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13003f12sm3644554c88.2 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:51 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130f55c6sm4014955c88.15 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:53 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d1302659fsm2560194c88.8 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:54 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130cc5ebsm2912555c88.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:56 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147df0686fsm4804668eec.14 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:51:58 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc193f8sm9272822eec.1 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:52:00 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13003f12sm3647249c88.2 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:52:02 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147df0ba0asm4437689eec.18 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:52:03 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130cc5ebsm2914423c88.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:52:05 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130cc5ebsm2914806c88.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:52:07 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130cc5ebsm2915198c88.12 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 10:52:08 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d12f267fdsm2570043c88.0 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 11:01:42 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d13003f12sm3838022c88.2 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
+2026-07-22 11:10:07 [[31merror[39m]: PrismaClientKnownRequestError: 
+Invalid `prisma.attendance.create()` invocation in
+C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\attendance\attendance.routes.ts:37:33
+
+  34     where: { id: existing.id },
+  35     data: { clockIn: now, isLate, status: 'PRESENT' },
+  36   })
+→ 37 : await prisma.attendance.create(
+Unique constraint failed on the constraint: `Attendance_employeeId_date_key`
+    at $n.handleRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\attendance\attendance.routes.ts:37:9
+2026-07-22 11:19:19 [[31merror[39m]: PrismaClientKnownRequestError: 
+Invalid `prisma.attendance.create()` invocation in
+C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\attendance\attendance.routes.ts:35:33
+
+  32     where: { id: existing.id },
+  33     data: { clockIn: now, isLate, status: 'PRESENT' },
+  34   })
+→ 35 : await prisma.attendance.create(
+Unique constraint failed on the constraint: `Attendance_employeeId_date_key`
+    at $n.handleRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\attendance\attendance.routes.ts:35:9
+2026-07-22 11:19:29 [[31merror[39m]: PrismaClientKnownRequestError: 
+Invalid `prisma.attendance.create()` invocation in
+C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\attendance\attendance.routes.ts:35:33
+
+  32     where: { id: existing.id },
+  33     data: { clockIn: now, isLate, status: 'PRESENT' },
+  34   })
+→ 35 : await prisma.attendance.create(
+Unique constraint failed on the constraint: `Attendance_employeeId_date_key`
+    at $n.handleRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at C:\Users\amarj\Desktop\employee-management-portal\server\src\modules\attendance\attendance.routes.ts:35:9
+2026-07-22 12:03:10 [[31merror[39m]: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13d130262d2sm2861840c88.7 - gsmtp
+    at SMTPConnection._formatError (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:1588:34)
+    at SMTPConnection.<anonymous> (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:556:26)
+    at SMTPConnection._processResponse (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:993:20)
+    at SMTPConnection._onData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\amarj\Desktop\employee-management-portal\server\node_modules\nodemailer\lib\smtp-connection\index.js:195:44)
+    at TLSSocket.emit (node:events:508:20)
+    at addChunk (node:internal/streams/readable:564:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:515:3)
+    at TLSSocket.Readable.push (node:internal/streams/readable:395:5)
