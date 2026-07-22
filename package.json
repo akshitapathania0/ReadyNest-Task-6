@@ -6,7 +6,7 @@
   "scripts": {
     "install-all": "npm install && cd client && npm install && cd ../server && npm install",
     "build": "cd client && npm run build && cd ../server && npm run build",
-    "start": "node server/dist/index.js",
+    "start": "cd server && npx prisma migrate deploy && node ../server/dist/index.js",
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
     "prisma:generate": "cd server && npx prisma generate",
     "prisma:migrate": "cd server && npx prisma migrate dev",
