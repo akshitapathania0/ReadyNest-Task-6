@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home } from 'lucide-react';
-import { Button } from '../../components/ui';
+import { Button } from '../components/ui';
 
 const NotFoundPage: React.FC = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 p-6">
