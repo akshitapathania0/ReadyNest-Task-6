@@ -20,12 +20,13 @@ export const sendSuccess = <T>(
   statusCode = 200,
   pagination?: ApiResponse['pagination']
 ): Response => {
-  return res.status(statusCode).json({
+  const response: Record<string, unknown> = {
     success: true,
     message,
-    data,
-    ...(pagination && { pagination }),
-  });
+  };
+  if (data !== undefined) response.data = data;
+  if (pagination) response.pagination = pagination;
+  return res.status(statusCode).json(response);
 };
 
 export const sendError = (
@@ -34,11 +35,12 @@ export const sendError = (
   statusCode = 500,
   errors?: unknown
 ): Response => {
-  return res.status(statusCode).json({
+  const response: Record<string, unknown> = {
     success: false,
     message,
-    ...(errors && { errors }),
-  });
+  };
+  if (errors !== undefined) response.errors = errors;
+  return res.status(statusCode).json(response);
 };
 
 export const getPaginationParams = (query: Record<string, string | string[] | undefined>) => {
